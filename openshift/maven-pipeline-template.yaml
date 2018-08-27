@@ -69,7 +69,7 @@ objects:
       type: Git
     strategy:
       jenkinsPipelineStrategy:
-        jenkinsfilePath: openshift/maven-pipeline.groovy
+        jenkinsfilePath: openshift/os-dsl-maven-pipeline.groovy
         env:
           - name: "APP_NAME"
             value: ${APP_NAME}
@@ -77,13 +77,13 @@ objects:
             value: ${GIT_SOURCE_REF}
           - name: "GIT_REPOSITORY"
             value: ${GIT_SOURCE_URL}
-          - name: "GIT_CREDENTIALS"
-            value: ${GIT_SOURCE_SECRET}
+#          - name: "GIT_CREDENTIALS"
+#            value: ${GIT_SOURCE_SECRET}
     triggers:
       - type: "Generic"
         generic:
           allowEnv: true
-          secret: ${GIT_SOURCE_SECRET}
+#          secret: ${GIT_SOURCE_SECRET}
 - apiVersion: "v1"
   kind: "BuildConfig"
   metadata:
